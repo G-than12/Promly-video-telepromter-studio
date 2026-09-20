@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Cloud%20Run-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://promptly-video-teleprompter-studio-1082313180414.asia-southeast1.run.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-AI%20Studio-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://promptly-video-teleprompter.ai.studio)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/G-than12/Promly-video-telepromter-studio)
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -12,7 +12,7 @@
 
 **Studio teleprompter video profesional berbasis web lengkap dengan floating overlay interaktif, perekam kamera HD, analisis kecepatan bicara, dan asisten naskah bertenaga AI Google Gemini.**
 
-[🌐 Kunjungi Aplikasi Live](https://promptly-video-teleprompter-studio-1082313180414.asia-southeast1.run.app/) • [📦 Repositori GitHub](https://github.com/G-than12/Promly-video-telepromter-studio) • [✨ Fitur Utama](#-fitur-unggulan) • [🚀 Cara Menjalankan](#-panduan-instalasi--menjalankan-lokal)
+[🌐 Kunjungi Aplikasi Live](https://promptly-video-teleprompter.ai.studio) • [📦 Repositori GitHub](https://github.com/G-than12/Promly-video-telepromter-studio) • [✨ Fitur Utama](#-fitur-unggulan) • [🚀 Cara Menjalankan](#-panduan-instalasi--menjalankan-lokal)
 
 </div>
 
@@ -227,14 +227,14 @@ npm start
 ```
 Aplikasi akan aktif pada port `3000` (atau port yang ditentukan oleh environment `PORT`).
 
-### Deployment di Cloud Run / Docker
-Aplikasi ini kompatibel untuk dideploy ke **Google Cloud Run**, Docker container, atau platform cloud modern lainnya dengan mengatur variabel lingkungan:
+### Deployment di AI Studio / Cloud Run / Docker
+Aplikasi ini kompatibel untuk dideploy ke **Google AI Studio**, **Google Cloud Run**, Docker container, atau platform cloud modern lainnya dengan mengatur variabel lingkungan:
 - `GEMINI_API_KEY`: Kunci API Google Gemini Anda.
 - `NODE_ENV`: `production`
 - `PORT`: `8080` atau `3000`
 
 Tautan versi produksi yang sedang aktif:
-🔗 **[https://promptly-video-teleprompter-studio-1082313180414.asia-southeast1.run.app/](https://promptly-video-teleprompter-studio-1082313180414.asia-southeast1.run.app/)**
+🔗 **[https://promptly-video-teleprompter.ai.studio](https://promptly-video-teleprompter.ai.studio)**
 
 ---
 
