@@ -1,0 +1,6 @@
+{
+  "name": "Promptly - Video Teleprompter Studio",
+  "description": "Professional browser-based video teleprompter studio with customizable overlay, auto-scroll, camera recorder, and AI script assistant.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
