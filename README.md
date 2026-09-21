@@ -12,7 +12,7 @@
 
 **Studio teleprompter video profesional berbasis web lengkap dengan floating overlay interaktif, perekam kamera HD, analisis kecepatan bicara, dan asisten naskah bertenaga AI Google Gemini.**
 
-[🌐 Kunjungi Aplikasi Live](https://promptly-video-teleprompter.ai.studio) • [📦 Repositori GitHub](https://github.com/G-than12/Promly-video-telepromter-studio) • [✨ Fitur Utama](#-fitur-unggulan) • [🚀 Cara Menjalankan](#-panduan-instalasi--menjalankan-lokal)
+[🌐 Kunjungi Aplikasi Live](https://promptly-video-teleprompter.ai.studio) • [📦 Repositori GitHub](https://github.com/G-than12/Promly-video-telepromter-studio) • [✨ Fitur Utama](#-fitur-unggulan) • [🗺️ Rencana Upgrade](#️-rencana-upgrade-fitur--roadmap-pengembangan) • [🚀 Cara Menjalankan](#-panduan-instalasi--menjalankan-lokal)
 
 </div>
 
@@ -244,6 +244,90 @@ Tautan versi produksi yang sedang aktif:
 | :--- | :--- | :--- |
 | **Clean Mode (Default)** | Mengambil rekaman langsung dari sensor kamera murni. Teks teleprompter hanya terlihat di layar Anda dan **tidak muncul** pada video hasil rekaman. | Membuat video YouTube, konten TikTok/Reels, video promosi profesional, dan presentasi formal. |
 | **Overlay Mode** | Menggunakan HTML5 Canvas untuk menggabungkan video kamera dan teks teleprompter ke dalam satu rekaman gabungan. | Video latihan (*rehearsal*), konten edukasi/tutorial cara membaca naskah, dokumentasi evaluasi bicara, atau konten *behind-the-scenes*. |
+
+---
+
+## 🗺️ Rencana Upgrade Fitur & Roadmap Pengembangan
+
+Daftar fitur dan peningkatan yang direncanakan untuk meningkatkan kapabilitas Promptly Studio menjadi studio teleprompter video profesional kelas dunia:
+
+### ⚡ 0. Pondasi & Perbaikan Kritis (Bugfix & Core Storage)
+- [ ] **Penyimpanan Video Permanen via IndexedDB**:
+  - Mengganti penyimpanan `blobUrl` di `localStorage` dengan penyimpanan binary blob langsung ke **IndexedDB** (`idb-keyval`).
+  - Menjamin video hasil rekaman (*takes*) tidak rusak/hilang saat halaman browser di-*refresh*.
+- [ ] **Real-Time Canvas Compositor (Overlay Recording Mode)**:
+  - Mengaktifkan render loop canvas 2D aktif di latar belakang saat merekam mode overlay, menggabungkan aliran kamera + teks teleprompter secara nyata.
+
+### 🎙️ 1. Smart Prompter & Voice Tracking (Game Changer)
+- [ ] **Voice-Activated Auto-Scroll (Speech Recognition)**:
+  - Pengguliran teks otomatis mengikuti kata yang diucapkan secara *real-time* via Web Speech API (`SpeechRecognition`).
+  - Otomatis jeda ketika pembicara berhenti bernapas/diam, dan mundur otomatis jika ada kata/kalimat yang diulang.
+- [ ] **Dynamic Pacing Tags (`[pause 3s]`, `[slow]`, `[fast]`)**:
+  - Indikator visual interaktif di dalam naskah: hitung mundur jeda waktu (`[pause 2s]`), pengatur tempo otomatis, dan tanda emosi (`[senyum]`, `[tarik napas]`).
+- [ ] **Anti-Darting Eye-Contact Box (Narrow Reading Zone)**:
+  - Mode panduan kolom baca sempit di tengah atas (persis di dekat webcam) agar mata tidak tampak melotot bergerak ke kiri-kanan saat membaca di monitor lebar.
+- [ ] **Detachable / Pop-Out Prompter Window**:
+  - Fitur membuka kotak teks teleprompter di jendela pop-out terpisah (`window.open`) untuk diarahkan ke monitor kedua atau perangkat keras kaca *beam-splitter*.
+- [ ] **Target WPM vs Real-Time Speech Pacer**:
+  - Bar indikator visual penunjuk apakah kecepatan bicara aktual terlalu cepat, pas, atau terlalu lambat dari target ritme.
+
+### 🧠 2. Fitur AI Generatif Lanjutan (Google Gemini 3.8 Flash)
+- [ ] **AI Rehearsal Coach & Take Evaluation**:
+  - Transkrip rekaman suara pasca-take, evaluasi akurasi kesesuaian bacaan dengan naskah (*Script Adherence %*), deteksi kata pengisi aktual (*filler words*), dan penilaian dinamika vokal.
+- [ ] **Viral Hook A/B Matrix**:
+  - Generator 5 variasi kalimat pembuka video (*Curiosity, Story, Shocking Stat, Contradictory, Pain Point*) agar kreator dapat merekam beberapa intro dalam satu sesi.
+- [ ] **AI Auto-Subtitles & Caption Generator (`.srt` / `.vtt`)**:
+  - Otomatis menyusun file subtitle bertanda waktu (*timestamped captions*) dari video dan naskah, siap pakai untuk upload TikTok/Shorts.
+- [ ] **Script Summarizer dari URL / YouTube**:
+  - Tempel link artikel web atau video YouTube, AI langsung merangkum intisarinya menjadi naskah video 60-90 detik siap baca.
+- [ ] **B-Roll & Gesture Prompts Generator**:
+  - AI menyematkan instruksi gerak tubuh dan visual di naskah: `[TAMPILKAN HP]`, `[ZOOM IN]`, `[TUNJUK KE KIRI]` yang muncul sebagai badge warna-warni saat prompter berjalan.
+- [ ] **Multilingual Script Adapter**:
+  - Terjemahan naskah multibahasa dengan penyesuaian gaya santai / kasual khas video pendek global.
+
+### 🎥 3. Studio Perekaman & Audio/Video Engineering
+- [ ] **Social Safe Zones Simulator (TikTok / Reels / Shorts)**:
+  - Overlay kisi transparan interaktif yang memperlihatkan letak tombol Like, Komentar, Share, dan area teks caption TikTok/Instagram agar wajah & teks aman dari halangan UI.
+- [ ] **Quick Video Trimmer ("Top & Tail")**:
+  - Pemotong video mini di modal pratinjau untuk memotong 2-3 detik awal (saat bersiap) dan akhir (saat meraih mouse untuk berhenti) sebelum mengunduh video.
+- [ ] **Web Audio Noise Gate & Low-Cut Filter**:
+  - Filter audio native di browser via Web Audio API (`BiquadFilterNode` & `DynamicsCompressorNode`) untuk meredam dengungan kipas laptop (*hum/hiss*) dan AC.
+- [ ] **Microphone Gain Boost Slider**:
+  - Pengaturan penguatan input audio (+0 dB hingga +15 dB) untuk mikrofon bawaan yang terlalu hening.
+- [ ] **Screen Sharing + Camera PiP Studio Mode**:
+  - Kemampuan merekam layar komputer bersamaan dengan lingkaran webcam dan teleprompter mengambang untuk materi tutorial atau software demo.
+- [ ] **High-Res Thumbnail Frame Grabber**:
+  - Tombol pengambil cuplikan frame resolusi penuh (*snapshot frame*) langsung dari video hasil rekaman ke format PNG/JPG untuk thumbnail video.
+- [ ] **Ekspor Audio Saja (`.mp3` / `.wav`)**:
+  - Kemampuan mengunduh trek suara saja untuk kebutuhan podcast atau voice-over.
+
+### 📱 4. Remote Control & Integrasi Perangkat Luar
+- [ ] **Smartphone Remote Control (QR Code Sync)**:
+  - Scan kode QR di layar desktop untuk menjadikan HP sebagai remote control nirkabel (Play/Pause, atur kecepatan scroll, restart, dan tombol Record).
+- [ ] **Bluetooth Shutter & Wireless Clicker Support**:
+  - Integrasi input keyboard untuk remote shutter Bluetooth (Volume Up/Down) dan wireless presentation clicker (Page Up/Down).
+- [ ] **Audio Countdown Cues (Beep Tones)**:
+  - Efek suara hitung mundur audio (*3-2-1 beep*) di headphone sebelum rekaman dimulai.
+
+### 📝 5. Script Editor & Manajemen Naskah
+- [ ] **Rich Color-Coded Sections**:
+  - Blok warna penanda bagian naskah secara visual (`[HOOK]` merah muda, `[PROBLEM]` jingga, `[CORE VALUE]` biru, `[CTA]` hijau).
+- [ ] **Folder, Tags, & Series Organizer**:
+  - Pengelompokan proyek berdasarkan seri video, channel, atau kampanye promosi.
+- [ ] **Ekspor & Impor Naskah (.docx, .pdf, .json backup)**:
+  - Backup seluruh proyek naskah dan pengaturan ke file JSON, atau cetak naskah ke PDF bersih.
+- [ ] **Font Aksesibilitas (OpenDyslexic / Lexend)**:
+  - Dukungan jenis huruf yang mudah dibaca oleh pembaca dengan disleksia atau silinder mata.
+
+---
+
+### 📅 Tahapan Rilis (Implementation Roadmap)
+
+| Tahap | Fokus Utama | Target Fitur |
+| :--- | :--- | :--- |
+| **Tahap 1 (Pondasi & Quick Wins)** | Stabilitas data & Utilitas Kreator | Penyimpanan IndexedDB, Canvas Compositor, Social Safe Zones Overlay, Quick Trimmer, Frame Grabber |
+| **Tahap 2 (Smart Prompter & Remote)** | Pengalaman Membaca Revolusioner | Voice-Activated Auto-Scroll, Dynamic Pacing Tags, Smartphone Remote via QR, Audio Countdown Beeps |
+| **Tahap 3 (Advanced AI & Media)** | Intelijen Produksi Konten | AI Rehearsal Coach, Auto-Subtitle SRT, Web Audio Noise Gate, Screen Share PiP Mode |
 
 ---
 
